@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  WEM OS design tokens.
+  Light: pure white surfaces, near-black ink, hairline borders (Linear/Stripe).
+  Brand accents: "water" (deep blue) and "electric" (amber) — used sparingly
+  for the wordmark, stock indicators, and charts.
+*/
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 9%;
+
+    --primary: 240 10% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 6% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 152 60% 36%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 32 80% 15%;
+
+    --water: 210 90% 44%;
+    --water-foreground: 0 0% 98%;
+
+    --electric: 42 96% 50%;
+    --electric-foreground: 36 80% 12%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 10% 9%;
+
+    --radius: 0.625rem;
+
+    --chart-1: 210 90% 44%;
+    --chart-2: 42 96% 50%;
+    --chart-3: 152 60% 36%;
+    --chart-4: 240 4% 46%;
+  }
+
+  .dark {
+    --background: 240 8% 6%;
+    --foreground: 0 0% 96%;
+
+    --card: 240 7% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 240 8% 8%;
+
+    --secondary: 240 5% 13%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 240 5% 13%;
+    --muted-foreground: 240 5% 62%;
+
+    --accent: 240 5% 13%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 152 55% 42%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 36 80% 12%;
+
+    --water: 210 90% 58%;
+    --water-foreground: 210 40% 8%;
+
+    --electric: 42 96% 56%;
+    --electric-foreground: 36 80% 10%;
+
+    --border: 240 5% 16%;
+    --input: 240 5% 16%;
+    --ring: 240 5% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  /* Tabular figures wherever we render money and counts. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
